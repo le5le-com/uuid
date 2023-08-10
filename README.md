@@ -32,13 +32,13 @@ func main() {
   // UUIDv7: 0189dd43-c284-7f4f-806e-e7d238e9babb，time=2023-08-10 10:25:52.772 +0800 CST
 
   s := "0189dd43-c284-7f4f-806e-e7d238e9babb"
-	uuid, err := Parse(s)
+	uuid, err := uuid.Parse(s)
 	if err != nil {
 	  panic(err)
 	}
 
   objectId := "63ede45a8d0137fc1b631091"
-	uuidv7, err = UUIDV7FromObjectID(objectId)
+	uuidv7, err = uuid.UUIDV7FromObjectID(objectId)
 	if err != nil {
 		panic(err)
 	}

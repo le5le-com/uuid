@@ -1,3 +1,3 @@
-module le5le-com/uuid
+module github.com/le5le-com/uuid
 
-go 1.20
+go 1.21.0
