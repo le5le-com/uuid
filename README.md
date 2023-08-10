@@ -29,22 +29,24 @@ func main() {
 		panic(err)
 	}
 	fmt.Printf("UUIDv7: %s, time=%v\n", uuidv7, uuidv7.TimeFromV7())
-  // UUIDv7: 0189dd43-c284-7f4f-806e-e7d238e9babb，time=2023-08-10 10:25:52.772 +0800 CST
+	// UUIDv7: 0189dd43-c284-7f4f-806e-e7d238e9babb，time=2023-08-10 10:25:52.772 +0800 CST
 
-  s := "0189dd43-c284-7f4f-806e-e7d238e9babb"
-	uuid, err := uuid.Parse(s)
+	s := "0189dd43-c284-7f4f-806e-e7d238e9babb"
+	u, err := uuid.Parse(s)
 	if err != nil {
-	  panic(err)
+		panic(err)
 	}
+	fmt.Printf("uuid.Parse: %s , %s\n", s, u)
 
-  objectId := "63ede45a8d0137fc1b631091"
+	objectId := "63ede45a8d0137fc1b631091"
 	uuidv7, err = uuid.UUIDV7FromObjectID(objectId)
 	if err != nil {
 		panic(err)
 	}
+	fmt.Printf("uuid.UUIDV7FromObjectID: %s , %s\n", objectId, uuidv7)
 
-  if uuidv7.ObjectIDHex() != objectId {
-		fmt.Printf("Convert uuidv7 to objectId error: uuid.ObjectIDHex=%s, objectId=%s", uuid.ObjectIDHex(), objectId)
+	if uuidv7.ObjectIDHex() != objectId {
+		fmt.Printf("Convert uuidv7 to objectId error: uuid.ObjectIDHex=%s, objectId=%s", uuidv7.ObjectIDHex(), objectId)
 	}
 }
 
