@@ -24,7 +24,7 @@ import (
 )
 
 func main() {
-	uuidv7, err := uuid.NewV7()
+	uuidv7, err := uuid.V7()
 	if err != nil {
 		panic(err)
 	}

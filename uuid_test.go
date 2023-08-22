@@ -5,10 +5,10 @@ import (
 	"time"
 )
 
-func TestNewV7(t *testing.T) {
+func TestV7(t *testing.T) {
 	var arr [1000000]UUID
 	for i := 0; i < 1000000; i++ {
-		uuid, err := NewV7()
+		uuid, err := V7()
 		if err != nil {
 			t.Fatal(err)
 		}
@@ -86,7 +86,7 @@ func TestShortString(t *testing.T) {
 }
 
 func TestTimeFromV7(t *testing.T) {
-	uuid, err := NewV7()
+	uuid, err := V7()
 	if err != nil {
 		t.Fatal(err)
 	}

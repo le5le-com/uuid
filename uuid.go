@@ -27,7 +27,7 @@ var InvalidFormat = "Invalid uuid format"
 //	+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 //	|                            rand_b                             |
 //	+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-func NewV7() (UUID, error) {
+func V7() (UUID, error) {
 	var uuid UUID
 
 	ms := time.Now().UTC().UnixMilli()
@@ -52,6 +52,15 @@ func NewV7() (UUID, error) {
 	}
 
 	return uuid, err
+}
+
+func V7String() string {
+	uuid, err := V7()
+	if err != nil {
+		return ""
+	}
+
+	return uuid.String()
 }
 
 // Parse a UUID string and returns the UUID
